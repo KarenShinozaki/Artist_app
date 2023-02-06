@@ -24,9 +24,6 @@ public class Jpop extends Artist {
         return activityStart;
     }
 
-//    public Set<String> getMemberName() {
-//        return memberName;
-//    }
 
     public String toString() {
         return this.getName() + "は" + this.getGenre() + "のグループアーティストです。" + this.getActivityStart() + "にグループが誕生しました。";  //+  outputName(this.memberName);
@@ -38,7 +35,7 @@ public class Jpop extends Artist {
             System.out.print(s + " ");
         }
         System.out.println("です");
-     //   return memberName.toString();
+        //   return memberName.toString();
     }
 
 

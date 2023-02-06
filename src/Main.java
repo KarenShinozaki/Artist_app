@@ -43,6 +43,7 @@ public class Main {
         smapMembers.add("草なぎ");
         smapMembers.add("中居");
         smapMembers.add("稲垣");
+        smapMembers.add("香取");
         Jpop smap = new Jpop("SMAP", "ライオンハート", null, 530, smapMembers, YearMonth.of(1988, 12));
 
         Set<String> tokioMembers = new HashSet<String>();
@@ -50,6 +51,7 @@ public class Main {
         tokioMembers.add("松岡");
         tokioMembers.add("城嶋");
         tokioMembers.add("山口");
+        tokioMembers.add("国分");
         Jpop tokio = new Jpop("TOKIO", "宙船", null, 357, tokioMembers, YearMonth.of(1944, 7));
 
         // 諸情報を出力
