@@ -6,8 +6,8 @@ public class Jpop extends Artist {
     private Set<String> memberName;
     private YearMonth activityStart;
 
-    Jpop(String name, String popularMusic, LocalDate birthday, int numberOfMusical, Set<String> memberName, YearMonth activityStart) {
-        super(name, popularMusic, birthday, numberOfMusical);
+    Jpop(String name, String popularMusic, int numberOfMusical,LocalDate birthday, Set<String> memberName, YearMonth activityStart) {
+        super(name, popularMusic,  numberOfMusical);
         this.memberName = memberName;
         this.activityStart = activityStart;
     }

@@ -1,21 +1,21 @@
 import java.time.LocalDate;
 
-public class HipHopArtist extends Artist {
+public class HipHopArtist extends SoloArtist {
 
     private long age;
     private String movie;
 
 
     //movieが存在する場合のコンストラクタ
-    public HipHopArtist(String name, String popularMusic, LocalDate birthday, int numberOfMusical, long age, String movie) {
-        super(name, popularMusic, birthday, numberOfMusical);
+    public HipHopArtist(String name, String popularMusic,  int numberOfMusical,LocalDate birthday, long age, String movie) {
+        super(name, popularMusic, numberOfMusical,birthday);
         this.age = age;
         this.movie = movie;
     }
 
     //movieが存在しない場合のコンストラクタ
-    public HipHopArtist(String name, String popularMusic, LocalDate birthday, int numberOfMusical, long age) {
-        this(name, popularMusic, birthday, numberOfMusical, age, null);
+    public HipHopArtist(String name, String popularMusic, int numberOfMusical,  LocalDate birthday,long age) {
+        this(name, popularMusic,  numberOfMusical, birthday,age, null);
     }
 
 

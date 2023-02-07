@@ -21,51 +21,53 @@ public class Main {
 
 
         // ClassicArtistクラスのインスタンスを生成
-        ClassicArtist vivaldi = new ClassicArtist("antonio lucio vivaldi", "四季", vivaldiBirth, ChronoUnit.YEARS.between(vivaldiBirth, vivaldiDeath), "バロック音楽", 800, vivaldiDeath);
-        ClassicArtist tchaikovsky = new ClassicArtist("Peter Ilyich Tchaikovsky", "白鳥の湖", tchaikovskyBirth, ChronoUnit.YEARS.between(tchaikovskyBirth, tchaikovskyDeath), "印象派", 100, tchaikovskyDeath);
+        ClassicArtist vivaldi = new ClassicArtist("antonio lucio vivaldi", "四季", 800, vivaldiBirth, ChronoUnit.YEARS.between(vivaldiBirth, vivaldiDeath), "バロック音楽", vivaldiDeath);
+        ClassicArtist tchaikovsky = new ClassicArtist("Peter Ilyich Tchaikovsky", "白鳥の湖", 100, tchaikovskyBirth, ChronoUnit.YEARS.between(tchaikovskyBirth, tchaikovskyDeath), "印象派", tchaikovskyDeath);
 
         // 諸情報を出力
         System.out.println(vivaldi.toString());
         System.out.println(tchaikovsky.toString());
 
         // Hip-HopArtistクラスのインスタンスを生成
-        HipHopArtist eminem = new HipHopArtist("Eminem", "Lose Yourself", eminemBirth, 546, ChronoUnit.YEARS.between(eminemBirth, now), "8 mile");
-        HipHopArtist kanyeWest = new HipHopArtist("Kanye West", "Power", kanyeBirth, 324, ChronoUnit.YEARS.between(kanyeBirth, now));
+        HipHopArtist eminem = new HipHopArtist("Eminem", "Lose Yourself",  546, eminemBirth,ChronoUnit.YEARS.between(eminemBirth, now), "8 mile");
+        HipHopArtist kanyeWest = new HipHopArtist("Kanye West", "Power", 324, kanyeBirth,ChronoUnit.YEARS.between(kanyeBirth, now));
 
         // 諸情報を出力
         System.out.println(eminem.toString());
         System.out.println(kanyeWest.toString());
 
+
+
         //Jpopクラスのインスタンス生成
 
-        Set<String> smapMembers = new HashSet<String>();
-        smapMembers.add("木村");
-        smapMembers.add("草なぎ");
-        smapMembers.add("中居");
-        smapMembers.add("稲垣");
-        smapMembers.add("香取");
-        Jpop smap = new Jpop("SMAP", "ライオンハート", null, 530, smapMembers, YearMonth.of(1988, 12));
-
-        Set<String> tokioMembers = new HashSet<String>();
-        tokioMembers.add("長瀬");
-        tokioMembers.add("松岡");
-        tokioMembers.add("城嶋");
-        tokioMembers.add("山口");
-        tokioMembers.add("国分");
-        Jpop tokio = new Jpop("TOKIO", "宙船", null, 357, tokioMembers, YearMonth.of(1944, 7));
-
-        // 諸情報を出力
-        System.out.print(smap.toString());
-        smap.outputName(smapMembers);
-
-        System.out.print(tokio.toString());
-        tokio.outputName(tokioMembers);
+//        Set<String> smapMembers = new HashSet<String>();
+//        smapMembers.add("木村");
+//        smapMembers.add("草なぎ");
+//        smapMembers.add("中居");
+//        smapMembers.add("稲垣");
+//        smapMembers.add("香取");
+//        Jpop smap = new Jpop("SMAP", "ライオンハート", null, 530, smapMembers, YearMonth.of(1988, 12));
+//
+//        Set<String> tokioMembers = new HashSet<String>();
+//        tokioMembers.add("長瀬");
+//        tokioMembers.add("松岡");
+//        tokioMembers.add("城嶋");
+//        tokioMembers.add("山口");
+//        tokioMembers.add("国分");
+//        Jpop tokio = new Jpop("TOKIO", "宙船", null, 357, tokioMembers, YearMonth.of(1944, 7));
+//
+//        // 諸情報を出力
+//        System.out.print(smap.toString());
+//        smap.outputName(smapMembers);
+//
+//        System.out.print(tokio.toString());
+//        tokio.outputName(tokioMembers);
 
 
         // メソッド出力
         System.out.println("----------------------------------");
         eminem.play();
         vivaldi.play();
-        smap.play();
+        //smap.play();
     }
 }

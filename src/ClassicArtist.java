@@ -1,14 +1,14 @@
 
 import java.time.LocalDate;
 
-public class ClassicArtist extends Artist {
+public class ClassicArtist extends SoloArtist {
     private long aliveYears;
     private String period;
     private LocalDate death;
 
 
-    public ClassicArtist(String name, String popularMusic, LocalDate birthday, long aliveYears, String period, int numberOfMusical,LocalDate death) {
-        super(name, popularMusic, birthday, numberOfMusical);
+    public ClassicArtist(String name, String popularMusic, int numberOfMusical, LocalDate birthday, long aliveYears, String period, LocalDate death) {
+        super(name, popularMusic, numberOfMusical, birthday);
         this.aliveYears = aliveYears;
         this.period = period;
         this.death = death;
