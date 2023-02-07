@@ -1,11 +1,13 @@
 import java.time.YearMonth;
+import java.util.HashSet;
+import java.util.Set;
 
 public abstract class GroupArtist extends Artist{
     private String groupName;
     private YearMonth activityStart;
     private YearMonth activityEndOrNow;
     private long ActivityPeriod;
-    SoloArtist name;
+    SoloArtist memberName;
 
     public GroupArtist(String groupName,String popularMusic, int numberOfMusical, YearMonth activityStart, YearMonth activityEndOrNow, long ActivityPeriod){
         super(popularMusic,numberOfMusical);
@@ -30,6 +32,17 @@ public abstract class GroupArtist extends Artist{
 
     public long getActivityPeriod() {
         return this.ActivityPeriod;
+    }
+
+    public void member(Jpop member1, Jpop member2){
+        Set<String> team = new HashSet<>();
+        team.add(member1.getMemberName());
+        team.add(member2.getMemberName());
+        System.out.print(this.getGroupName()+"のメンバーの名前は");
+        for (String s : team) {
+            System.out.print(s + " ");
+        }
+        System.out.println("です");
     }
 
 }

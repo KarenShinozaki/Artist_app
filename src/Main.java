@@ -1,6 +1,7 @@
 import java.time.LocalDate;
 import java.time.YearMonth;
 import java.time.temporal.ChronoUnit;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -29,10 +30,6 @@ public class Main {
         YearMonth yearMonthNow = YearMonth.now();
 
 
-
-
-
-
         // ClassicArtistクラスのインスタンスを生成
         ClassicArtist vivaldi = new ClassicArtist("antonio lucio vivaldi", "四季", 800, vivaldiBirth, ChronoUnit.YEARS.between(vivaldiBirth, vivaldiDeath), "バロック音楽", vivaldiDeath);
         ClassicArtist tchaikovsky = new ClassicArtist("Peter Ilyich Tchaikovsky", "白鳥の湖", 100, tchaikovskyBirth, ChronoUnit.YEARS.between(tchaikovskyBirth, tchaikovskyDeath), "印象派", tchaikovskyDeath);
@@ -50,7 +47,7 @@ public class Main {
         System.out.println(kanyeWest.toString());
 
 
-        GroupArtist smap = new GroupArtist("smap", "世界に一つだけの花", 530, smapStart, smapEnd, ChronoUnit.YEARS.between(smapStart, smapEnd)) {
+        GroupArtist smap = new GroupArtist("SMAP", "世界に一つだけの花", 530, smapStart, smapEnd, ChronoUnit.YEARS.between(smapStart, smapEnd)) {
 
             @Override
             public String getGenre() {
@@ -58,9 +55,11 @@ public class Main {
             }
         };
         Jpop kimutaku = new Jpop("木村拓哉","世界に一つだけの花",20,kimutakuBirth,smapStart);
+        Jpop kusanagi = new Jpop("草なぎ剛","世界に一つだけの花",20,kimutakuBirth,smapStart);
         System.out.println("----------------------------------");
-        smap.name=kimutaku;
-        System.out.println(smap.name.getName());
+        System.out.println(smap.toString());
+        smap.member(kimutaku,kusanagi);
+
         GroupArtist EscapeTheFate = new GroupArtist("EscapeTheFate", "Situations", 300, etfStart, yearMonthNow, ChronoUnit.YEARS.between(etfStart, yearMonthNow)) {
 
             @Override
@@ -68,9 +67,7 @@ public class Main {
                 return "post-hardcore";
             }
         };
-        System.out.println(smap.toString());
         System.out.println(EscapeTheFate.toString());
-
 
         //Jpopクラスのインスタンス生成
 
