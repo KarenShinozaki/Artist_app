@@ -16,8 +16,6 @@ public abstract class Artist {
     public abstract String getGenre();
 
     //　getter
-
-
     public String getPopularMusic() {
         return this.popularMusic;
     }
