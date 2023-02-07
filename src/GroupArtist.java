@@ -22,6 +22,7 @@ public abstract class GroupArtist extends Artist{
     public YearMonth getActivityStart(){return this.activityStart;}
     public YearMonth getActivityEndOrNow(){return this.activityEndOrNow;}
     public String getGroupName(){return this.groupName;}
+    public SoloArtist getMemberName(){return this.memberName;}
 
     public String toString(){
         return this.getGroupName()+ "は" + this.getActivityStart() +"に活動を開始した" + this.getGenre()+"グループです。"
@@ -34,7 +35,7 @@ public abstract class GroupArtist extends Artist{
         return this.ActivityPeriod;
     }
 
-    public void member(Jpop member1, Jpop member2){
+    public void member(SoloArtist member1, SoloArtist member2){
         Set<String> team = new HashSet<>();
         team.add(member1.getMemberName());
         team.add(member2.getMemberName());

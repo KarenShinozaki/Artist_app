@@ -31,16 +31,16 @@ public class Main {
 
 
         // ClassicArtistクラスのインスタンスを生成
-        ClassicArtist vivaldi = new ClassicArtist("antonio lucio vivaldi", "四季", 800, vivaldiBirth, ChronoUnit.YEARS.between(vivaldiBirth, vivaldiDeath), "バロック音楽", vivaldiDeath);
-        ClassicArtist tchaikovsky = new ClassicArtist("Peter Ilyich Tchaikovsky", "白鳥の湖", 100, tchaikovskyBirth, ChronoUnit.YEARS.between(tchaikovskyBirth, tchaikovskyDeath), "印象派", tchaikovskyDeath);
+        SoloArtist vivaldi = new ClassicArtist("antonio lucio vivaldi", "四季", 800, vivaldiBirth, ChronoUnit.YEARS.between(vivaldiBirth, vivaldiDeath), "バロック音楽", vivaldiDeath);
+        SoloArtist tchaikovsky = new ClassicArtist("Peter Ilyich Tchaikovsky", "白鳥の湖", 100, tchaikovskyBirth, ChronoUnit.YEARS.between(tchaikovskyBirth, tchaikovskyDeath), "印象派", tchaikovskyDeath);
 
         // 諸情報を出力
         System.out.println(vivaldi.toString());
         System.out.println(tchaikovsky.toString());
 
         // Hip-HopArtistクラスのインスタンスを生成
-        HipHopArtist eminem = new HipHopArtist("Eminem", "Lose Yourself", 546, eminemBirth, ChronoUnit.YEARS.between(eminemBirth, now), "8 mile");
-        HipHopArtist kanyeWest = new HipHopArtist("Kanye West", "Power", 324, kanyeBirth, ChronoUnit.YEARS.between(kanyeBirth, now));
+        SoloArtist eminem = new HipHopArtist("Eminem", "Lose Yourself", 546, eminemBirth, ChronoUnit.YEARS.between(eminemBirth, now), "8 mile");
+        SoloArtist kanyeWest = new HipHopArtist("Kanye West", "Power", 324, kanyeBirth, ChronoUnit.YEARS.between(kanyeBirth, now));
 
         // 諸情報を出力
         System.out.println(eminem.toString());
@@ -54,8 +54,8 @@ public class Main {
                 return "J-POP";
             }
         };
-        Jpop kimutaku = new Jpop("木村拓哉","世界に一つだけの花",20,kimutakuBirth,smapStart);
-        Jpop kusanagi = new Jpop("草なぎ剛","世界に一つだけの花",20,kimutakuBirth,smapStart);
+        SoloArtist kimutaku = new Jpop("木村拓哉","世界に一つだけの花",20,kimutakuBirth,smapStart);
+        SoloArtist kusanagi = new Jpop("草なぎ剛","世界に一つだけの花",20,kimutakuBirth,smapStart);
         System.out.println("----------------------------------");
         System.out.println(smap.toString());
         smap.member(kimutaku,kusanagi);
