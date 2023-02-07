@@ -2,18 +2,30 @@ import java.time.YearMonth;
 
 public abstract class GroupArtist extends Artist{
     private YearMonth activityStart;
-    private YearMonth activityend;
+    private YearMonth activityendOrNow;
+    private long ActivityPeriod;
 
-    public GroupArtist(String name,String popularMusic,int numberOfMusical,YearMonth activityStart,YearMonth activityend){
+    public GroupArtist(String name, String popularMusic, int numberOfMusical, YearMonth activityStart, YearMonth activityendOrNow, long ActivityPeriod){
         super(name,popularMusic,numberOfMusical);
         this.activityStart = activityStart;
-        this.activityend = activityend;
+        this.activityendOrNow = activityendOrNow;
+        this.ActivityPeriod = ActivityPeriod;
     }
-    public abstract void play();
 
     public abstract String getGenre();
 
     public YearMonth getActivityStart(){return this.activityStart;}
-    public YearMonth getActivityend(){return this.activityend;}
+    public YearMonth getActivityendOrNow(){return this.activityendOrNow;}
+
+    public String toString(){
+        return this.getName()+ "は" + this.getActivityStart() +"に活動を開始した" + this.getGenre()+"グループです。"
+                 + this.getActivityendOrNow()+ "までの活動していた"+this.getActivityPeriod()+"年間に"+getNumberOfMusical()+"曲を発表しました。"
+                 +"有名な曲は"+this.getPopularMusic()+"です。";
+
+    }
+
+    public long getActivityPeriod() {
+        return this.ActivityPeriod;
+    }
 
 }

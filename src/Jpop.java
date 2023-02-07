@@ -2,13 +2,13 @@ import java.time.LocalDate;
 import java.time.YearMonth;
 import java.util.Set;
 
-public class Jpop extends Artist {
-    private Set<String> memberName;
+public class Jpop extends SoloArtist {
+//    private Set<String> memberName;
     private YearMonth activityStart;
 
-    Jpop(String name, String popularMusic, int numberOfMusical,LocalDate birthday, Set<String> memberName, YearMonth activityStart) {
-        super(name, popularMusic,  numberOfMusical);
-        this.memberName = memberName;
+    Jpop(String name, String popularMusic, int numberOfMusical,LocalDate birthday, YearMonth activityStart) {
+        super(name, popularMusic,  numberOfMusical,birthday);
+//        this.memberName = memberName;
         this.activityStart = activityStart;
     }
 

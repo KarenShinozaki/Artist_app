@@ -9,4 +9,6 @@ public abstract class SoloArtist extends Artist{
         this.birthday = birthday;
     }
     public LocalDate getBirthday(){return this.birthday;}
+
+    public abstract void play();
 }

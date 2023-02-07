@@ -19,6 +19,17 @@ public class Main {
         LocalDate vivaldiDeath = LocalDate.of(1741, 7, 28);
         LocalDate tchaikovskyDeath = LocalDate.of(1893, 5, 7);
 
+        //YearMonth型で
+        YearMonth smapStart = YearMonth.of(1988, 12);
+        YearMonth smapEnd = YearMonth.of(2016, 12);
+
+        YearMonth etfStart = YearMonth.of(2004, 12);
+        YearMonth yearMonthNow = YearMonth.now();
+
+
+
+
+
 
         // ClassicArtistクラスのインスタンスを生成
         ClassicArtist vivaldi = new ClassicArtist("antonio lucio vivaldi", "四季", 800, vivaldiBirth, ChronoUnit.YEARS.between(vivaldiBirth, vivaldiDeath), "バロック音楽", vivaldiDeath);
@@ -29,13 +40,30 @@ public class Main {
         System.out.println(tchaikovsky.toString());
 
         // Hip-HopArtistクラスのインスタンスを生成
-        HipHopArtist eminem = new HipHopArtist("Eminem", "Lose Yourself",  546, eminemBirth,ChronoUnit.YEARS.between(eminemBirth, now), "8 mile");
-        HipHopArtist kanyeWest = new HipHopArtist("Kanye West", "Power", 324, kanyeBirth,ChronoUnit.YEARS.between(kanyeBirth, now));
+        HipHopArtist eminem = new HipHopArtist("Eminem", "Lose Yourself", 546, eminemBirth, ChronoUnit.YEARS.between(eminemBirth, now), "8 mile");
+        HipHopArtist kanyeWest = new HipHopArtist("Kanye West", "Power", 324, kanyeBirth, ChronoUnit.YEARS.between(kanyeBirth, now));
 
         // 諸情報を出力
         System.out.println(eminem.toString());
         System.out.println(kanyeWest.toString());
 
+
+        GroupArtist smap = new GroupArtist("smap", "世界に一つだけの花", 530, smapStart, smapEnd, ChronoUnit.YEARS.between(smapStart, smapEnd)) {
+
+            @Override
+            public String getGenre() {
+                return "J-POP";
+            }
+        };
+        GroupArtist EscapeTheFate = new GroupArtist("EscapeTheFate", "Situations", 300, etfStart, yearMonthNow, ChronoUnit.YEARS.between(etfStart, yearMonthNow)) {
+
+            @Override
+            public String getGenre() {
+                return "post-hardcore";
+            }
+        };
+        System.out.println(smap.toString());
+        System.out.println(EscapeTheFate.toString());
 
 
         //Jpopクラスのインスタンス生成
