@@ -7,7 +7,6 @@ public class ClassicArtist extends Artist {
     private LocalDate death;
 
 
-
     public ClassicArtist(String name, String popularMusic, LocalDate birthday, long aliveYears, String period, int numberOfMusical,LocalDate death) {
         super(name, popularMusic, birthday, numberOfMusical);
         this.aliveYears = aliveYears;
