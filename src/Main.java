@@ -14,6 +14,8 @@ public class Main {
         LocalDate eminemBirth = LocalDate.of(1972, 10, 17);
         LocalDate kanyeBirth = LocalDate.of(1977, 6, 8);
 
+        LocalDate kimutakuBirth = LocalDate.of(1972, 11, 13);
+
 
         // LocalDate型で死没日を取得
         LocalDate vivaldiDeath = LocalDate.of(1741, 7, 28);
@@ -55,6 +57,10 @@ public class Main {
                 return "J-POP";
             }
         };
+        Jpop kimutaku = new Jpop("木村拓哉","世界に一つだけの花",20,kimutakuBirth,smapStart);
+        System.out.println("----------------------------------");
+        smap.name=kimutaku;
+        System.out.println(smap.name.getName());
         GroupArtist EscapeTheFate = new GroupArtist("EscapeTheFate", "Situations", 300, etfStart, yearMonthNow, ChronoUnit.YEARS.between(etfStart, yearMonthNow)) {
 
             @Override

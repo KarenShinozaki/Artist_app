@@ -4,12 +4,9 @@ import java.util.Set;
 
 public class Jpop extends SoloArtist {
 //    private Set<String> memberName;
-    private YearMonth activityStart;
 
     Jpop(String name, String popularMusic, int numberOfMusical,LocalDate birthday, YearMonth activityStart) {
         super(name, popularMusic,  numberOfMusical,birthday);
-//        this.memberName = memberName;
-        this.activityStart = activityStart;
     }
 
     public void play() {
@@ -20,13 +17,8 @@ public class Jpop extends SoloArtist {
         return "J-POP";
     }
 
-    public YearMonth getActivityStart() {
-        return activityStart;
-    }
-
-
     public String toString() {
-        return this.getName() + "は" + this.getGenre() + "のグループアーティストです。" + this.getActivityStart() + "にグループが誕生しました。";  //+  outputName(this.memberName);
+        return this.getName() + "は" + this.getGenre() + "のアーティストです。" + this.getBirthday() + "に誕生しました。";
     }
 
     public void outputName(Set<String> memberName) {
@@ -35,7 +27,6 @@ public class Jpop extends SoloArtist {
             System.out.print(s + " ");
         }
         System.out.println("です");
-        //   return memberName.toString();
     }
 
 
