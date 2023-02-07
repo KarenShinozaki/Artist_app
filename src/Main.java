@@ -48,7 +48,6 @@ public class Main {
 
 
         GroupArtist smap = new GroupArtist("SMAP", "世界に一つだけの花", 530, smapStart, smapEnd, ChronoUnit.YEARS.between(smapStart, smapEnd)) {
-
             @Override
             public String getGenre() {
                 return "J-POP";
@@ -56,10 +55,14 @@ public class Main {
         };
         SoloArtist kimutaku = new Jpop("木村拓哉","世界に一つだけの花",20,kimutakuBirth,smapStart);
         SoloArtist kusanagi = new Jpop("草なぎ剛","世界に一つだけの花",20,kimutakuBirth,smapStart);
+        SoloArtist katori = new Jpop("香取慎吾","世界に一つだけの花",20,kimutakuBirth,smapStart);
+        SoloArtist nakai = new Jpop("中居正広","世界に一つだけの花",20,kimutakuBirth,smapStart);
+        SoloArtist inagaki = new Jpop("稲垣吾郎","世界に一つだけの花",20,kimutakuBirth,smapStart);
         System.out.println("----------------------------------");
         System.out.println(smap.toString());
-        smap.member(kimutaku,kusanagi);
-
+        System.out.println(kimutaku.toString());
+        smap.member(kimutaku,kusanagi,katori,nakai,inagaki);
+        System.out.println("----------------------------------");
         GroupArtist EscapeTheFate = new GroupArtist("EscapeTheFate", "Situations", 300, etfStart, yearMonthNow, ChronoUnit.YEARS.between(etfStart, yearMonthNow)) {
 
             @Override

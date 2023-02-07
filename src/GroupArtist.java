@@ -35,10 +35,13 @@ public abstract class GroupArtist extends Artist{
         return this.ActivityPeriod;
     }
 
-    public void member(SoloArtist member1, SoloArtist member2){
+    public void member(SoloArtist member1, SoloArtist member2,SoloArtist member3,SoloArtist member4,SoloArtist member5){
         Set<String> team = new HashSet<>();
         team.add(member1.getMemberName());
         team.add(member2.getMemberName());
+        team.add(member3.getMemberName());
+        team.add(member4.getMemberName());
+        team.add(member5.getMemberName());
         System.out.print(this.getGroupName()+"のメンバーの名前は");
         for (String s : team) {
             System.out.print(s + " ");
