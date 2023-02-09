@@ -1,9 +1,9 @@
 public class Genre {
-    Music music;
-    String genreName;
+    private String genreName;
 
-    public Genre(Music music, String genreName) {
-        this.music = music;
+    public Genre(String genreName) {
         this.genreName = genreName;
     }
+
+    public String getGenreName(){return this.genreName;}
 }
