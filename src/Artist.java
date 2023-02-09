@@ -10,6 +10,7 @@ public class Artist {
     private long aliveYears;
     private String period;
     private LocalDate death;
+    private Genre genre;
 
     //存命中
 
