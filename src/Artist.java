@@ -13,10 +13,14 @@ public class Artist {
 
     //存命中
 
-    public Artist(String name, String popularMusic, int numberOfMusical, LocalDate birthday) {
+    public Artist(String name, String popularMusic, int numberOfMusical) {
         this.name = name;
         this.popularMusic = popularMusic;
         this.numberOfMusical = numberOfMusical;
+    }
+
+    public Artist(String name, String popularMusic, int numberOfMusical, LocalDate birthday) {
+        this(name,popularMusic,numberOfMusical);
         this.birthday = birthday;
     }
 

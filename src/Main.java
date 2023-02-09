@@ -46,58 +46,23 @@ public class Main {
         System.out.println(eminem.toString());
         System.out.println(kanyeWest.toString());
 
+        Artist kimutaku = new Artist("木村拓哉","世界に一つだけの花",20,kimutakuBirth,ChronoUnit.YEARS.between(kimutakuBirth, now));
+        Artist kusanagi = new Artist("草なぎ剛","世界に一つだけの花",20,kimutakuBirth,ChronoUnit.YEARS.between(kimutakuBirth, now));
+        Artist katori = new Artist("香取慎吾","世界に一つだけの花",20,kimutakuBirth,ChronoUnit.YEARS.between(kimutakuBirth, now));
+        Artist nakai = new Artist("中居正広","世界に一つだけの花",20,kimutakuBirth,ChronoUnit.YEARS.between(kimutakuBirth, now));
+        Artist inagaki = new Artist("稲垣吾郎","世界に一つだけの花",20,kimutakuBirth,ChronoUnit.YEARS.between(kimutakuBirth, now));
+        Set<Artist> members = new HashSet<Artist>();
+        members.add(kimutaku);
+        members.add(kusanagi);
+        members.add(nakai);
+        members.add(inagaki);
+        members.add(katori);
+        GroupArtist smap = new GroupArtist("SMAP", "世界に一つだけの花", 530, smapStart, smapEnd, ChronoUnit.YEARS.between(smapStart, smapEnd),members);
 
-//        GroupArtist smap = new GroupArtist("SMAP", "世界に一つだけの花", 530, smapStart, smapEnd, ChronoUnit.YEARS.between(smapStart, smapEnd)) {
-//            @Override
-//            public String getGenre() {
-//                return "J-POP";
-//            }
-//        };
-//        Artist kimutaku = new Jpop("木村拓哉","世界に一つだけの花",20,kimutakuBirth,smapStart);
-//        Artist kusanagi = new Jpop("草なぎ剛","世界に一つだけの花",20,kimutakuBirth,smapStart);
-//        Artist katori = new Jpop("香取慎吾","世界に一つだけの花",20,kimutakuBirth,smapStart);
-//        Artist nakai = new Jpop("中居正広","世界に一つだけの花",20,kimutakuBirth,smapStart);
-//        Artist inagaki = new Jpop("稲垣吾郎","世界に一つだけの花",20,kimutakuBirth,smapStart);
-//        System.out.println("----------------------------------");
-//        System.out.println(smap.toString());
-//        System.out.println(kimutaku.toString());
-//        smap.member(kimutaku,kusanagi,katori,nakai,inagaki);
-//        System.out.println("----------------------------------");
-//        GroupArtist EscapeTheFate = new GroupArtist("EscapeTheFate", "Situations", 300, etfStart, yearMonthNow, ChronoUnit.YEARS.between(etfStart, yearMonthNow)) {
+        System.out.println("----------------------------------");
+        System.out.println(smap.toString());
+        System.out.println(kimutaku.toString());
 //
-//            @Override
-//            public String getGenre() {
-//                return "post-hardcore";
-//            }
-//        };
-//        System.out.println(EscapeTheFate.toString());
-
-        //Jpopクラスのインスタンス生成
-
-//        Set<String> smapMembers = new HashSet<String>();
-//        smapMembers.add("木村");
-//        smapMembers.add("草なぎ");
-//        smapMembers.add("中居");
-//        smapMembers.add("稲垣");
-//        smapMembers.add("香取");
-//        Jpop smap = new Jpop("SMAP", "ライオンハート", null, 530, smapMembers, YearMonth.of(1988, 12));
-//
-//        Set<String> tokioMembers = new HashSet<String>();
-//        tokioMembers.add("長瀬");
-//        tokioMembers.add("松岡");
-//        tokioMembers.add("城嶋");
-//        tokioMembers.add("山口");
-//        tokioMembers.add("国分");
-//        Jpop tokio = new Jpop("TOKIO", "宙船", null, 357, tokioMembers, YearMonth.of(1944, 7));
-//
-//        // 諸情報を出力
-//        System.out.print(smap.toString());
-//        smap.outputName(smapMembers);
-//
-//        System.out.print(tokio.toString());
-//        tokio.outputName(tokioMembers);
-
-
         // メソッド出力
         System.out.println("----------------------------------");
         //smap.play();
