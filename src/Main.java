@@ -31,46 +31,46 @@ public class Main {
 
 
         // ClassicArtistクラスのインスタンスを生成
-        SoloArtist vivaldi = new ClassicArtist("antonio lucio vivaldi", "四季", 800, vivaldiBirth, ChronoUnit.YEARS.between(vivaldiBirth, vivaldiDeath), "バロック音楽", vivaldiDeath);
-        SoloArtist tchaikovsky = new ClassicArtist("Peter Ilyich Tchaikovsky", "白鳥の湖", 100, tchaikovskyBirth, ChronoUnit.YEARS.between(tchaikovskyBirth, tchaikovskyDeath), "印象派", tchaikovskyDeath);
+        Artist vivaldi = new Artist("antonio lucio vivaldi", "四季", 800, vivaldiBirth, ChronoUnit.YEARS.between(vivaldiBirth, vivaldiDeath), "バロック音楽", vivaldiDeath);
+        Artist tchaikovsky = new Artist("Peter Ilyich Tchaikovsky", "白鳥の湖", 100, tchaikovskyBirth, ChronoUnit.YEARS.between(tchaikovskyBirth, tchaikovskyDeath), "印象派", tchaikovskyDeath);
 
         // 諸情報を出力
         System.out.println(vivaldi.toString());
         System.out.println(tchaikovsky.toString());
 
         // Hip-HopArtistクラスのインスタンスを生成
-        SoloArtist eminem = new HipHopArtist("Eminem", "Lose Yourself", 546, eminemBirth, ChronoUnit.YEARS.between(eminemBirth, now), "8 mile");
-        SoloArtist kanyeWest = new HipHopArtist("Kanye West", "Power", 324, kanyeBirth, ChronoUnit.YEARS.between(kanyeBirth, now));
+        Artist eminem = new Artist("Eminem", "Lose Yourself", 546,eminemBirth , ChronoUnit.YEARS.between(eminemBirth, now), "8 mile");
+        Artist kanyeWest = new Artist("Kanye West", "Power", 324, kanyeBirth, ChronoUnit.YEARS.between(kanyeBirth, now));
 
         // 諸情報を出力
         System.out.println(eminem.toString());
         System.out.println(kanyeWest.toString());
 
 
-        GroupArtist smap = new GroupArtist("SMAP", "世界に一つだけの花", 530, smapStart, smapEnd, ChronoUnit.YEARS.between(smapStart, smapEnd)) {
-            @Override
-            public String getGenre() {
-                return "J-POP";
-            }
-        };
-        SoloArtist kimutaku = new Jpop("木村拓哉","世界に一つだけの花",20,kimutakuBirth,smapStart);
-        SoloArtist kusanagi = new Jpop("草なぎ剛","世界に一つだけの花",20,kimutakuBirth,smapStart);
-        SoloArtist katori = new Jpop("香取慎吾","世界に一つだけの花",20,kimutakuBirth,smapStart);
-        SoloArtist nakai = new Jpop("中居正広","世界に一つだけの花",20,kimutakuBirth,smapStart);
-        SoloArtist inagaki = new Jpop("稲垣吾郎","世界に一つだけの花",20,kimutakuBirth,smapStart);
-        System.out.println("----------------------------------");
-        System.out.println(smap.toString());
-        System.out.println(kimutaku.toString());
-        smap.member(kimutaku,kusanagi,katori,nakai,inagaki);
-        System.out.println("----------------------------------");
-        GroupArtist EscapeTheFate = new GroupArtist("EscapeTheFate", "Situations", 300, etfStart, yearMonthNow, ChronoUnit.YEARS.between(etfStart, yearMonthNow)) {
-
-            @Override
-            public String getGenre() {
-                return "post-hardcore";
-            }
-        };
-        System.out.println(EscapeTheFate.toString());
+//        GroupArtist smap = new GroupArtist("SMAP", "世界に一つだけの花", 530, smapStart, smapEnd, ChronoUnit.YEARS.between(smapStart, smapEnd)) {
+//            @Override
+//            public String getGenre() {
+//                return "J-POP";
+//            }
+//        };
+//        Artist kimutaku = new Jpop("木村拓哉","世界に一つだけの花",20,kimutakuBirth,smapStart);
+//        Artist kusanagi = new Jpop("草なぎ剛","世界に一つだけの花",20,kimutakuBirth,smapStart);
+//        Artist katori = new Jpop("香取慎吾","世界に一つだけの花",20,kimutakuBirth,smapStart);
+//        Artist nakai = new Jpop("中居正広","世界に一つだけの花",20,kimutakuBirth,smapStart);
+//        Artist inagaki = new Jpop("稲垣吾郎","世界に一つだけの花",20,kimutakuBirth,smapStart);
+//        System.out.println("----------------------------------");
+//        System.out.println(smap.toString());
+//        System.out.println(kimutaku.toString());
+//        smap.member(kimutaku,kusanagi,katori,nakai,inagaki);
+//        System.out.println("----------------------------------");
+//        GroupArtist EscapeTheFate = new GroupArtist("EscapeTheFate", "Situations", 300, etfStart, yearMonthNow, ChronoUnit.YEARS.between(etfStart, yearMonthNow)) {
+//
+//            @Override
+//            public String getGenre() {
+//                return "post-hardcore";
+//            }
+//        };
+//        System.out.println(EscapeTheFate.toString());
 
         //Jpopクラスのインスタンス生成
 
@@ -100,8 +100,6 @@ public class Main {
 
         // メソッド出力
         System.out.println("----------------------------------");
-        eminem.play();
-        vivaldi.play();
         //smap.play();
     }
 }
