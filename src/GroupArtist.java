@@ -35,11 +35,17 @@ public class GroupArtist extends Artist {
     }
 
     public String toString() {
+        String m = "";
         for (Artist s : members) {
-            System.out.print(s.getName()+" ");}
-            return "から結成される"+this.getName() + "は" + this.getActivityStart() + "に活動を開始した" + "グループです。"
-                    + this.getActivityEndOrNow() + "までの活動していた" + this.getActivityPeriod() + "年間に" + getNumberOfMusical() + "曲を発表しました。"
-                    + "有名な曲は" + this.getMusicAndGenre().getMusicTitle() + "です。"+"この曲のジャンルは"
-                    +this.getMusicAndGenre().getGenre().getGenreName() + "です。";
+            if (m.length() !=0) {
+                m += " ";
+            }
+            m += s.getName();
+        }
+        return this.getName() + "は" + this.getActivityStart() + "に活動を開始した" + "グループです。"
+                + this.getActivityEndOrNow() + "までの活動していた" + this.getActivityPeriod() + "年間に" + getNumberOfMusical() + "曲を発表しました。"
+                + "有名な曲は" + this.getMusicAndGenre().getMusicTitle() + "です。" + "この曲のジャンルは"
+                + this.getMusicAndGenre().getGenre().getGenreName() + "です。" + m + "はメンバーです。";
+
     }
 }

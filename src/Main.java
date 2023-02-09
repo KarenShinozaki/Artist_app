@@ -29,10 +29,11 @@ public class Main {
         YearMonth etfStart = YearMonth.of(2004, 12);
         YearMonth yearMonthNow = YearMonth.now();
 
-
+        Set<Music> musicBox = new HashSet<>();
         // ClassicArtistクラスのインスタンスを生成
         Genre classic = new Genre("クラシック音楽");
         Music fourSeasons = new Music("四季",classic);
+        musicBox.add(fourSeasons);
         Artist vivaldi = new Artist("antonio lucio vivaldi", fourSeasons, 800, vivaldiBirth, ChronoUnit.YEARS.between(vivaldiBirth, vivaldiDeath), "バロック音楽", vivaldiDeath);
         Music swanLake = new Music("白鳥の湖",classic);
         Artist tchaikovsky = new Artist("Peter Ilyich Tchaikovsky", swanLake, 100, tchaikovskyBirth, ChronoUnit.YEARS.between(tchaikovskyBirth, tchaikovskyDeath), "印象派", tchaikovskyDeath);
@@ -44,6 +45,7 @@ public class Main {
 
         Genre hipHop = new Genre("HIP-HOP");
         Music loseYourSelf = new Music("Lose your self",hipHop);
+        musicBox.add(loseYourSelf);
         // Hip-HopArtistクラスのインスタンスを生成
         Artist eminem = new Artist("Eminem", loseYourSelf, 546,eminemBirth , ChronoUnit.YEARS.between(eminemBirth, now), "8 mile");
         Music power = new Music("Power",hipHop);
@@ -79,6 +81,13 @@ public class Main {
         Genre soul = new Genre("soul");
         Music fantasy = new Music("fantasy",soul);
         System.out.println(fantasy.toString());
+
+
+        for(Music music:musicBox){
+            if(music.getGenre().getGenreName().equals("HIP-HOP")){
+                System.out.println("ジャンルがHipHopの曲は"+music.getMusicTitle());
+            }
+        }
 
     }
 }

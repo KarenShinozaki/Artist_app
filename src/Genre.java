@@ -6,4 +6,5 @@ public class Genre {
     }
 
     public String getGenreName(){return this.genreName;}
+
 }
