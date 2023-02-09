@@ -49,9 +49,9 @@ public class Artist {
                 + this.getAliveYears() + "歳で生涯を終え、その生涯の中で" + this.getNumberOfMusical() + "もの曲を作曲したといわれています。";
         String aliveArtist = this.getName()+"はアーティストです。" + this.getBirthday() + "に生まれました。現在" + this.getAge() + "歳で、有名な曲は"
                 +this.getMusicAndGenre().getMusicTitle() + "です。" +"この曲のジャンルは" +this.getMusicAndGenre().getGenre().getGenreName() + "です。" +
-                "その生涯の中で" + this.getNumberOfMusical() + "もの曲を作曲したといわれています。";
+                "現在" + this.getNumberOfMusical() + "の曲をリリースしています。";
         if (this.movie != null) {
-            aliveArtist += "映画にも出演し、" + this.getMovie() + "は、過去の" + this.getName() + "の経験をつづった映画で、自身で監督及び主演を務めました。";
+            aliveArtist += "\n"+"映画にも出演し、" + this.getMovie() + "は、過去の" + this.getName() + "の経験をつづった映画で、自身で監督及び主演を務めました。";
         }
         if(this.death != null){return diedArtist;}else
         return aliveArtist;

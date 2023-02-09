@@ -36,10 +36,11 @@ public class Main {
         Artist vivaldi = new Artist("antonio lucio vivaldi", fourSeasons, 800, vivaldiBirth, ChronoUnit.YEARS.between(vivaldiBirth, vivaldiDeath), "バロック音楽", vivaldiDeath);
         Music swanLake = new Music("白鳥の湖",classic);
         Artist tchaikovsky = new Artist("Peter Ilyich Tchaikovsky", swanLake, 100, tchaikovskyBirth, ChronoUnit.YEARS.between(tchaikovskyBirth, tchaikovskyDeath), "印象派", tchaikovskyDeath);
-
+        System.out.println("----------------------------------");
         // 諸情報を出力
         System.out.println(vivaldi.toString());
         System.out.println(tchaikovsky.toString());
+        System.out.println("----------------------------------");
 
         Genre hipHop = new Genre("HIP-HOP");
         Music loseYourSelf = new Music("Lose your self",hipHop);
@@ -51,7 +52,7 @@ public class Main {
         // 諸情報を出力
         System.out.println(eminem.toString());
         System.out.println(kanyeWest.toString());
-
+        System.out.println("----------------------------------");
 
         Genre jPop = new Genre("J-POP");
         Music lionHeart = new Music("ライオンハート",jPop);
@@ -67,18 +68,17 @@ public class Main {
         members.add(nakai);
         members.add(inagaki);
         members.add(katori);
-        GroupArtist smap = new GroupArtist("SMAP", lionHeart, 530, smapStart, smapEnd, ChronoUnit.YEARS.between(smapStart, smapEnd),members);
+        Music onlyOneFlower = new Music("世界に一つだけの花",jPop);
+        GroupArtist smap = new GroupArtist("SMAP", onlyOneFlower, 530, smapStart, smapEnd, ChronoUnit.YEARS.between(smapStart, smapEnd),members);
 
-        System.out.println("----------------------------------");
-        System.out.println(smap.toString());
         System.out.println(kimutaku.toString());
+        System.out.println(smap.toString());
 //
         // Musicクラスのインスタンス生成
         System.out.println("----------------------------------");
         Genre soul = new Genre("soul");
         Music fantasy = new Music("fantasy",soul);
         System.out.println(fantasy.toString());
-
 
     }
 }
