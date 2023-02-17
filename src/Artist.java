@@ -1,4 +1,6 @@
 import java.time.LocalDate;
+import java.util.Optional;
+import java.time.LocalDate;
 
 public class Artist {
     private String name;
@@ -8,7 +10,6 @@ public class Artist {
     private long age;
     private String movie;
     private long aliveYears;
-    private String period;
     private LocalDate death;
 
 
@@ -35,16 +36,15 @@ public class Artist {
         this.movie = movie;
     }
 
-    public Artist(String name, Music musicAndGenre, int numberOfMusical, LocalDate birthday, long aliveYears, String period, LocalDate death) {
+    public Artist(String name, Music musicAndGenre, int numberOfMusical, LocalDate birthday, long aliveYears,  LocalDate death) {
         this(name,musicAndGenre,numberOfMusical,birthday);
         this.aliveYears = aliveYears;
-        this.period = period;
         this.death = death;
     }
 
     public String toString() {
-        String diedArtist = this.getName() + "は"/* + this.getGenre()*/ + "作曲家です。" + this.getBirthday() + "に生まれました。その時代は"
-                + this.getPeriod() + "の時代で、作曲した有名な曲は" + this.getMusicAndGenre().getMusicTitle()  + "です。"+"この曲のジャンルは"
+        String diedArtist = this.getName() + "は作曲家です。" + this.getBirthday() + "に生まれました。" +
+                "作曲した有名な曲は" + this.getMusicAndGenre().getMusicTitle()  + "です。"+"この曲のジャンルは"
                 +this.getMusicAndGenre().getGenre().getGenreName() + "です。" +this.getDeath()+"で死没。"
                 + this.getAliveYears() + "歳で生涯を終え、その生涯の中で" + this.getNumberOfMusical() + "もの曲を作曲したといわれています。";
         String aliveArtist = this.getName()+"はアーティストです。" + this.getBirthday() + "に生まれました。現在" + this.getAge() + "歳で、有名な曲は"
@@ -63,7 +63,6 @@ public class Artist {
     public long getAge(){return this.age;}
     public String getMovie(){return this.movie;}
     public long getAliveYears(){return this.aliveYears;}
-    public String getPeriod(){return this.period;}
     public LocalDate getDeath(){return this.death;}
     public LocalDate getBirthday(){return this.birthday;}
     public Music getMusicAndGenre() {
