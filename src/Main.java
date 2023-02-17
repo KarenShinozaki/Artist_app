@@ -31,11 +31,11 @@ public class Main {
 
         Set<Music> musicBox = new HashSet<>();
         // ClassicArtistクラスのインスタンスを生成
-        Genre classic = new Genre("クラシック音楽");
-        Music fourSeasons = new Music("四季",classic);
+        Music fourSeasons = new Music("四季",Genre.CLASSIC);
         musicBox.add(fourSeasons);
         Artist vivaldi = new Artist("antonio lucio vivaldi", fourSeasons, 800, vivaldiBirth, ChronoUnit.YEARS.between(vivaldiBirth, vivaldiDeath), "バロック音楽", vivaldiDeath);
-        Music swanLake = new Music("白鳥の湖",classic);
+        Music swanLake = new Music("白鳥の湖",Genre.CLASSIC);
+        musicBox.add(swanLake);
         Artist tchaikovsky = new Artist("Peter Ilyich Tchaikovsky", swanLake, 100, tchaikovskyBirth, ChronoUnit.YEARS.between(tchaikovskyBirth, tchaikovskyDeath), "印象派", tchaikovskyDeath);
         System.out.println("----------------------------------");
         // 諸情報を出力
@@ -43,12 +43,12 @@ public class Main {
         System.out.println(tchaikovsky.toString());
         System.out.println("----------------------------------");
 
-        Genre hipHop = new Genre("HIP-HOP");
-        Music loseYourSelf = new Music("Lose your self",hipHop);
+        Music loseYourSelf = new Music("Lose your self",Genre.HIPHOP);
         musicBox.add(loseYourSelf);
         // Hip-HopArtistクラスのインスタンスを生成
         Artist eminem = new Artist("Eminem", loseYourSelf, 546,eminemBirth , ChronoUnit.YEARS.between(eminemBirth, now), "8 mile");
-        Music power = new Music("Power",hipHop);
+        Music power = new Music("Power",Genre.HIPHOP);
+        musicBox.add(power);
         Artist kanyeWest = new Artist("Kanye West", power, 324, kanyeBirth, ChronoUnit.YEARS.between(kanyeBirth, now));
 
         // 諸情報を出力
@@ -56,9 +56,9 @@ public class Main {
         System.out.println(kanyeWest.toString());
         System.out.println("----------------------------------");
 
-        Genre jPop = new Genre("J-POP");
-        Music lionHeart = new Music("ライオンハート",jPop);
-
+       // Genre jPop = new Genre("J-POP");
+        Music lionHeart = new Music("ライオンハート",Genre.JPOP);
+        musicBox.add(lionHeart);
         Artist kimutaku = new Artist("木村拓哉",lionHeart,20,kimutakuBirth,ChronoUnit.YEARS.between(kimutakuBirth, now));
         Artist kusanagi = new Artist("草なぎ剛",lionHeart,20,kimutakuBirth,ChronoUnit.YEARS.between(kimutakuBirth, now));
         Artist katori = new Artist("香取慎吾",lionHeart,20,kimutakuBirth,ChronoUnit.YEARS.between(kimutakuBirth, now));
@@ -70,7 +70,7 @@ public class Main {
         members.add(nakai);
         members.add(inagaki);
         members.add(katori);
-        Music onlyOneFlower = new Music("世界に一つだけの花",jPop);
+        Music onlyOneFlower = new Music("世界に一つだけの花",Genre.JPOP);
         GroupArtist smap = new GroupArtist("SMAP", onlyOneFlower, 530, smapStart, smapEnd, ChronoUnit.YEARS.between(smapStart, smapEnd),members);
 
         System.out.println(kimutaku.toString());
@@ -78,13 +78,13 @@ public class Main {
 //
         // Musicクラスのインスタンス生成
         System.out.println("----------------------------------");
-        Genre soul = new Genre("soul");
-        Music fantasy = new Music("fantasy",soul);
+       //Genre soul = new Genre("soul");
+        Music fantasy = new Music("fantasy",Genre.SOUL);
         System.out.println(fantasy.toString());
 
 
         for(Music music:musicBox){
-            if(music.getGenre().getGenreName().equals("HIP-HOP")){
+            if(music.getGenre().getGenreName().equals(Genre.HIPHOP.getGenreName())){
                 System.out.println("ジャンルがHipHopの曲は"+music.getMusicTitle());
             }
         }

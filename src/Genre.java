@@ -1,10 +1,17 @@
-public class Genre {
-    private String genreName;
+public enum Genre {
 
-    public Genre(String genreName) {
+    CLASSIC("クラシック音楽"),
+    HIPHOP("HIP-HOP"),
+    JPOP("J-POP"),
+    SOUL("ソウルミュージック");
+    private final String genreName;
+
+    private Genre(String genreName) {
         this.genreName = genreName;
     }
 
-    public String getGenreName(){return this.genreName;}
+    public String getGenreName() {
+        return this.genreName;
+    }
 
 }
