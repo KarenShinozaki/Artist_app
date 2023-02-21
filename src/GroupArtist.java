@@ -1,51 +1,69 @@
-import java.time.LocalDate;
 import java.time.YearMonth;
+import java.time.temporal.ChronoUnit;
+import java.util.Optional;
 import java.util.Set;
 
 public class GroupArtist extends Artist {
-    // private String groupName;
     private YearMonth activityStart;
-    private YearMonth activityEndOrNow;
-    private long ActivityPeriod;
+    private YearMonth activityEnd;
     private Set<Artist> members;
 
-    public GroupArtist(String name, Music music, int numberOfMusical, YearMonth activityStart, YearMonth activityEndOrNow, long ActivityPeriod, Set<Artist> members) {
+
+    public GroupArtist(String name, Music music, int numberOfMusical, YearMonth activityStart, Set<Artist> members) {
         super(name, music, numberOfMusical);
         this.activityStart = activityStart;
-        this.activityEndOrNow = activityEndOrNow;
-        this.ActivityPeriod = ActivityPeriod;
         this.members = members;
+    }
+    public GroupArtist(String name, Music music, int numberOfMusical, YearMonth activityStart, YearMonth activityEnd,Set<Artist> members) {
+        this(name, music, numberOfMusical,activityStart,members);
+        this.activityEnd = activityEnd;
     }
 
     public YearMonth getActivityStart() {
         return this.activityStart;
     }
 
-    public YearMonth getActivityEndOrNow() {
-        return this.activityEndOrNow;
+    public Optional<YearMonth> getActivityEnd() {
+        return Optional.ofNullable(this.activityEnd);
     }
 
-    //public String getGroupName(){return this.groupName;}
     public long getActivityPeriod() {
-        return this.ActivityPeriod;
+        return  ChronoUnit.YEARS.between(this.getActivityStart(), this.getActivityEnd().orElse(YearMonth.now()));
     }
 
     public Set<Artist> getMembers() {
         return this.members;
     }
+    public boolean isActivation(){
+        return getActivityEnd().isEmpty();
+    }
+
+    public boolean isActivityEnd(){
+        return getActivityEnd().isPresent();
+    }
+
 
     public String toString() {
         String m = "";
         for (Artist s : members) {
             if (m.length() !=0) {
-                m += " ";
+                m += ",";
             }
             m += s.getName();
         }
-        return this.getName() + "は" + this.getActivityStart() + "に活動を開始した" + "グループです。"
-                + this.getActivityEndOrNow() + "までの活動していた" + this.getActivityPeriod() + "年間に" + getNumberOfMusical() + "曲を発表しました。"
+        if(isActivation()){
+            return this.getName() + "は" + this.getActivityStart() + "月に活動を開始した" + "グループです。"
+                + "活動している" + this.getActivityPeriod() + "年間に" + getNumberOfMusical() + "曲を発表しました。"
                 + "有名な曲は" + this.getMusicAndGenre().getMusicTitle() + "です。" + "この曲のジャンルは"
                 + this.getMusicAndGenre().getGenre().getGenreName() + "です。" + m + "はメンバーです。";
-
+        }if(isActivityEnd()) {
+            return this.getName() + "は" + this.getActivityStart() + "月に活動を開始した" + "グループです。"
+                    + this.getActivityEnd().get() + "月までの活動していた" + this.getActivityPeriod() + "年間に" + getNumberOfMusical() + "曲を発表しました。"
+                    + "有名な曲は" + this.getMusicAndGenre().getMusicTitle() + "です。" + "この曲のジャンルは"
+                    + this.getMusicAndGenre().getGenre().getGenreName() + "です。" + m + "はメンバーです。";
+        }
+        return "使用可能なコンストラクタがありません";
     }
+
+
 }
